@@ -2,9 +2,9 @@
 
 ## Description
 
-This CloudFormation Template will deploy the following elements to enable a step by step stop or start of an SAP application and the EC2 instances on which it is hosted. 
+This CloudFormation Template will deploy the following elements to enable a step by step stop or start of an SAP application and the EC2 instances on which it is hosted.
 
-For more details on its usage see the blog. 
+For more details on its usage see the blog.
 
 
 
@@ -33,11 +33,16 @@ An IAM Role - Ensure the use of least privilege
 ## Installation
 
 
-1. In **CloudFormation**, select Create Stack and populate the required parameters, ensuring that they are unique in your account. Consider deleting old versions if you make a change.
+1. In CloudFormation, select Create Stack and populate the required parameters or leave them as the defaults, ensuring that they are unique in your account. You will need a unique name and an email address.
+Once complete. Select _Next_, then under configure stack options select _Next_, review the inputs and select _Create Stack_.
+Note: If you are redeploying this template, consider deleting old stacks.
 
 ![image_specify_stack_details](images/2021/06/image-specify-stack-details.png)
 
+
 2. Subscribe to the email which should arrive in your inbox to receive notifications.
+
+![image-email-subscription](images/2021/06/image-email-subscription.png)
 
 
 3. Check all instances are configured as targets for for [Systems Manager Automation](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html) on EC2 instances including the appropriate instance roles.
@@ -66,4 +71,3 @@ Monitor the progress. Note: not all steps are run (stop steps for stop, start st
 
 
 Check SAP connectivity or Instance Status to ensure the Runbook status matches with that of the SAP system.
-
