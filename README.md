@@ -56,7 +56,7 @@ Note: If you are redeploying this template, consider deleting old stacks.
 These tags can be added manually to the EC2 Instance tab in the console, or incorporated in your infrastructure deployment templates. Note: The SID of the HANA system (e.g HDB) is not required. Use the Netweaver SID as the HanaTenant value to link the components together. See the diagram for an example. Take care as any typos may cause errors.
 
 <p align="center">
-<img src="/images/2021/06/image-required-tags.png" alt="image_ssm_doc_descriptions" width=80% >>
+<img src="/images/2021/06/image-required-tags.png" alt="image_ssm_doc_descriptions" width=80% >
 </p>
 
 
