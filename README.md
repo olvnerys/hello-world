@@ -16,25 +16,26 @@ This CloudFormation Template will deploy the following elements to enable a step
 
 For more details on its usage see the blog.
 
-:white_check_mark: **SSM Automation Document (Runbook)**
 
-  The Runbook takes the parameters SAP SID and an action (Stop or Start), the AWS systems manager Runbook will run through a series of steps to Stop or Start the SAP application, Hana Database and EC2 Instances. The supported architectures cover single instance, semi distributed or distributed running HANA in a single tenant scale-up deployment.
+-  **SSM Automation Document (Runbook)**
 
-:white_check_mark: **EventBridge Rules for Document Completion and Step Failure**
+    The Runbook takes the parameters SAP SID and an action (Stop or Start), the AWS systems manager Runbook will run through a series of steps to Stop or Start the SAP application, Hana Database and EC2 Instances. The supported architectures cover single instance, semi distributed or distributed running HANA in a single tenant scale-up deployment.
 
-Eventbridge rules are created to push details of success or failure to the SNS topic on completion of the automation document as well as for a specific step which fails. The notification output is parsed to form a link which will take you directly to the automation document contents.
+- **EventBridge Rules for Document Completion and Step Failure**
 
-:white_check_mark: **SNS Topic**
+   Eventbridge rules are created to push details of success or failure to the SNS topic on completion of the automation document as well as for a specific step which fails. The notification output is parsed to form a link which will take you directly to the automation document contents.
 
-An SNS topic is created as a recipient for EventBridge Rules. The CloudFormation document requires an email address as the first subscription. Additional emails can then be added.
+- **SNS Topic**
 
-:white_check_mark: **A CloudWatch Logs Log Group**
+    An SNS topic is created as a recipient for EventBridge Rules. The CloudFormation document requires an email address as the first subscription. Additional emails can then be added.
 
-This is not created by the Cloudformation, but defined as a destination for runCommand logs to ensure these are not truncated by any character limit of Systems Manager or deleted as part of housekeeping. Consider adjusting the retention on this group.
+ **A CloudWatch Logs Log Group**
 
-:no_entry_sign: **Not created**
+   This is not created by the Cloudformation, but defined as a destination for runCommand logs to ensure these are not truncated by any character limit of Systems Manager or deleted as part of housekeeping. Consider adjusting the retention on this group.
 
-This CloudFormation does NOT create an IAM Role - Especially if you are calling the SSM document from external sources, ensure you build an IAM role with least privilege
+:no_entry_sign:  **Not created**
+
+   This CloudFormation does NOT create an IAM Role - Especially if you are calling the SSM document from external sources, ensure you build an IAM role with least privilege
 
 
 ## Installation
