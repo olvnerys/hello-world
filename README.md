@@ -29,13 +29,13 @@ For more details on its usage see the blog.
 
     An SNS topic is created as a recipient for EventBridge Rules. The CloudFormation document requires an email address as the first subscription. Additional emails can then be added.
 
- **A CloudWatch Logs Log Group**
+- **A CloudWatch Logs Log Group**
 
-   This is not created by the Cloudformation, but defined as a destination for runCommand logs to ensure these are not truncated by any character limit of Systems Manager or deleted as part of housekeeping. Consider adjusting the retention on this group.
+    This is not created by the Cloudformation, but defined as a destination for runCommand logs to ensure these are not truncated by any character limit of Systems Manager or deleted as part of housekeeping. Consider adjusting the retention on this group.
 
 :no_entry_sign:  **Not created**
 
-   This CloudFormation does NOT create an IAM Role - Especially if you are calling the SSM document from external sources, ensure you build an IAM role with least privilege
+This CloudFormation does NOT create an IAM Role - Especially if you are calling the SSM document from external sources, ensure you build an IAM role with least privilege
 
 
 ## Installation
